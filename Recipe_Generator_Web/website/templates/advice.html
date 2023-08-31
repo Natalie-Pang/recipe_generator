@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nattomato</title>
+    <link rel="icon" href="../static/images/icon.png">
+    <link rel="stylesheet" href="../static/style/advice.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="{{ url_for('views.home') }}" class="logo">Nattomato</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('views.home') }}" class="navbar-item">Home</a><li>
+                <li><a href="{{ url_for('views.advice') }}" class="navbar-item">Advice</a></li>           
+                <li>
+                    <a href="#" class="navbar-item">Services▾</a>
+                    <div class="dropdown">
+                        <ul>
+                            <li><a href="{{ url_for('views.recipe') }}" class="navbar-item">Recipe</a></li>
+                            <li><a href="{{ url_for('views.home') }}#home-page-calculator" class="navbar-item">Calculator</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="advice-page">
+        <div class="advice-page-header">
+            <h1>Prepare Food Depending on Your Health is Important</h1>
+            <p>Discover a healthier you through ingredient-conscious recipes. Your food choices impact your well-being. Our curated recipes prioritize your health goals – from weight management to increased energy. Nourish your body with every bite, making each meal a step towards a vibrant life. Empower yourself to taste the benefits of good health.</p>
+        </div>
+        <div class="advice-page-steps">
+            <h1 style="font-size: clamp(22px, 2.5vw, 30px);">Steps to Eat Healthy</h1>
+            <h1>1. Define Health Goals</h1>
+            <p> Identify your specific health objectives, such as weight management, energy boost, or disease prevention.</p>
+            <h1>2. Ingredient Awareness</h1>
+            <p>Learn about the health benefits of various ingredients – from nutrient-rich vegetables to lean proteins and whole grains.</p>
+            <h1>3. Curated Recipes</h1>
+            <p>Explore our collection of recipes tailored to your health goals, ensuring each dish is designed to maximize well-being.</p>
+            <h1>4. Smart Choices</h1>
+            <p>Select recipes aligned with your objectives, making conscious decisions to include ingredients that support your health.</p>
+            <h1>5. Taste the Benefits</h1>
+            <p>Enjoy delicious meals that not only satisfy your palate but also contribute to your overall vitality, empowering you to lead a healthier lifestyle.</p>
+        </div>
+    </div>
+</body>
+</html>

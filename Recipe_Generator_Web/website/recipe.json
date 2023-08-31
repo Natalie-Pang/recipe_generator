@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Tomato Egg",
+    "ingredients": ["tomato", "egg"],
+    "allergies": ["egg"],
+    "health_issue": ["hypercholesterolemia"],
+    "calories": "238",
+    "ingredients_needed": "Tomato, Egg",
+    "steps": "First crack an egg and scramlbe it. After that, fry it in a frying pan. After it is cooked, place it on a plate. Cut a tomato into pieces and place it inside a frying pan. After the tomato is cooked place the cooked egg inside.",
+    "photo": "../static/images/tomatoFryEgg.JPG",
+    "link": "https://thewoksoflife.com/stir-fried-tomato-and-egg/"
+  },
+  {
+    "name": "Tomato Soup",
+    "ingredients": ["tomato", "onion", "carrot"],
+    "allergies": [],
+    "health_issue": [],
+    "calories": "90",
+    "ingredients_needed": "Tomato, onion, carrot",
+    "steps": "First cut a tomato into pieces. Place it inside a frying pan and cook until all tomato become sauce. Then cut onion into smaller pieces and place it insde the tomato sauce.",
+    "photo": "../static/images/tomatoSoup.jpg",
+    "link": "https://thewoksoflife.com/stir-fried-tomato-and-egg/"
+  },
+  {
+    "name": "Tomato Salad",
+    "ingredients": ["tomato", "egg"],
+    "allergies": ["egg"],
+    "health_issue": ["hypercholesterolemia"],
+    "calories": "306",
+    "ingredients_needed": "Tomato, Egg",
+    "steps": "First, boil an egg in a pot with boiling water for 10 minutes. After that peel the shell when it has cooled down. Cut it into smaller pieces. Then place it on a plate with sliced tomato.",
+    "photo": "../static/images/tomatoSalad.jpg",
+    "link": "https://thewoksoflife.com/stir-fried-tomato-and-egg/"
+  },
+  {
+    "name": "Butandon",
+    "ingredients": ["pork", "onion"],
+    "allergies": [],
+    "health_issue": [""],
+    "calories": "848",
+    "ingredients_needed": "Pork, onion, soy sauce",
+    "steps": "Cut the pork into small and thin pieces. Then cut an onion into small pieces. Pour soy sauce, sake, mirin and all ingredients inside a frying pan and cook for 10 minutes.",
+    "photo": "../static/images/butandon.jpg",
+    "link": "https://thewoksoflife.com/stir-fried-tomato-and-egg/"
+  },
+  {
+    "name": "Bake salmon",
+    "ingredients": ["salmon"],
+    "allergies": ["seafood"],
+    "health_issue": [""],
+    "calories": "848",
+    "ingredients_needed": "Salmon, lemon(optional)",
+    "steps": "First unskin the salmon. After that place it inside a baking tray and bake it for 30 mins in the oven of 200°C. After that squeeze some lemon on top.",
+    "photo": "../static/images/bakeSalmon.jpg",
+    "link": "https://thewoksoflife.com/stir-fried-tomato-and-egg/"
+  },
+  {
+    "name": "Oyakodon",
+    "ingredients": ["chicken", "egg", "onion"],
+    "allergies": ["egg"],
+    "health_issue": [""],
+    "calories": "546",
+    "ingredients_needed": "Chicken, egg, onion",
+    "steps": "First cut the chicken into smaller pieces. Pour soy sauce, mirin, sake and sugar into a pot and place onion and chicken inside. Once cooked place scrambled egg on top and serve.",
+    "photo": "../static/images/oyakodon.jpg",
+    "link": "https://thewoksoflife.com/stir-fried-tomato-and-egg/"
+  }
+]

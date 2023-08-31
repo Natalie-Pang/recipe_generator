@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nattomato</title>
+    <link rel="icon" href="../static/images/icon.png">
+    <link rel="stylesheet" href="../static/style/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="{{ url_for('views.home') }}" class="logo">Nattomato</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('views.home') }}" class="navbar-item">Home</a><li>
+                <li><a href="{{ url_for('views.advice') }}" class="navbar-item">Advice</a></li>           
+                <li>
+                    <a href="#" class="navbar-item">Services▾</a>
+                    <div class="dropdown">
+                        <ul>
+                            <li><a href="{{ url_for('views.recipe') }}" class="navbar-item">Recipe</a></li>
+                            <li><a href="#home-page-calculator" class="navbar-item">Calculator</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="home-page">
+        <div class="home-page-header">
+            <h1><span style="color: rgb(255, 237, 75);">Nattomato's</span> Recipe Generator</h1>
+            <p>Welcome to our recipe generator. In this website, different recipes will be
+                generated according to your preferences. You can choose the ingredients that
+                you have, your health issues, allergies that you have and so on. The recipes 
+                will provide detailed steps involved so that a perfect dish can be made with 
+                ease. Click the button below to get started!
+            </p>
+            <a href="{{ url_for('views.recipe') }}"><button>Go now!</button></a>
+        </div>
+        <div class="home-page-body">
+            <img src="../static/images/homepageBackground2.png">
+            <div class="home-page-body-text">
+                <p>According to statistic, over 90% of people have difficulty in considering their meals due to wide range of factors. It is of vital importance to know what we can eat according to our health situations.</p>
+            </div>
+        </div>
+        <div class="home-page-calculator" id="home-page-calculator">
+            <h1>Calories Calculator</h1>
+            <p>Below is a calculator for calculating calories that you need using your age, height and weight</p>
+            <form action="/" method="post">
+                <div class="select-box-container">
+                    <div class="select-box">
+                        <label for="gender">Gender(F/M)</label>
+                        <input type="text" required="required" name="gender" pattern="M|F" size="6" title="only letter M or F is allowed" />
+                    </div>
+                    <div class="select-box">
+                        <label for="age">Age</label>
+                        <input type="number" name="age" id="age" min="1" max="120">
+                    </div>
+                    <div class="select-box">
+                        <label for="weight">Weight(kg)</label>
+                        <input type="number" name="weight" id="weight" min="1" max="300">
+                    </div>
+                    <div class="select-box">
+                        <label for="height">Height(cm)</label>
+                        <input type="number" name="height" id="height" min="1" max="250">
+                    </div>
+                </div>
+                <input class="submit-button" type="submit" name="submit" value="Submit">
+            </form>
+            {% if calorie_needs %}
+            <p>Your calculated calorie needs: {{ calorie_needs|round(1) }}</p>
+            {% endif %}
+        </div>        
+    </div>
+</body>
+</html>

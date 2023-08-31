@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nattomato</title>
+    <link rel="icon" href="/static/images/icon.png">
+    <link rel="stylesheet" href="../static/style/recipe.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css">
+</head>
+<body>
+    <header>
+        <a href="{{ url_for('views.home') }}" class="logo">Nattomato</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('views.home') }}" class="navbar-item">Home</a><li>
+                <li><a href="{{ url_for('views.advice') }}" class="navbar-item">Advice</a></li>           
+                <li>
+                    <a href="#" class="navbar-item">Services▾</a>
+                    <div class="dropdown">
+                        <ul>
+                            <li><a href="{{ url_for('views.recipe') }}" class="navbar-item">Recipe</a></li>
+                            <li><a href="{{ url_for('views.home') }}#home-page-calculator" class="navbar-item">Calculator</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="recipe-page-header">
+        <h1><span style="color: rgb(255, 237, 75);">Nattomato's</span> Recipe Generator</h1>
+        <p>Please choose the options best fit your situation</p>
+    </div>
+    <div class="recipe-page-preference">
+        <form action="/recipe/" method="post">
+            <div class="select-box-container">
+                <div class="select-box">
+                    <label for="choice">Ingredients</label>
+                    <select name="ingredients" id="ingredients" multiple>
+                        <option value="beef">Salmon</option>
+                        <option value="pork">Pork</option>
+                        <option value="chicken">Chicken</option>
+                        <option value="carrot">Carrot</option>
+                        <option value="tomato">Tomato</option>
+                        <option value="onion">Onion</option>
+                        <option value="egg">Egg</option>
+                    </select>
+                </div>
+                <div class="select-box">
+                    <label for="choice">Allergies</label>
+                    <select name="allergies" id="allergies" multiple>
+                        <option value="peanut">Peanut</option>
+                        <option value="egg">Egg</option>
+                        <option value="milk">Milk</option>
+                        <option value="seafood">Seafood</option>
+                    </select>
+                </div>
+                <div class="select-box">
+                    <label for="choice">Health Issues</label>
+                    <select name="health_issue" id="health_issue" multiple>
+                        <option value="highBloodPressure">High Blood Pressure</option>
+                        <option value="lactoseIntolerance">Lactose Intolerance</option>
+                        <option value="hyperglycaemia">Hyperglycaemia</option>
+                        <option value="hypercholesterolemia">Hypercholesterolemia</option>
+                    </select>
+                </div>
+            </div>
+            <input class="submit-button" type="submit" name="submit" value="Submit">
+        </form>
+    </div>
+    <div class="recipe-page-recipe">
+        <div class="recipe-header"><p>Suggested Recipes</p></div>
+        {% if recipes %}
+            {% for recipe in recipes %}
+            <div class="recipe-card">
+                <div class="recipe-content">
+                    <div class="recipe-left">
+                        <h2 class="recipe-name">{{ recipe.name }}</h2>
+                        <img src="{{ recipe.photo }}" alt="{{ recipe.name }}">
+                    </div>
+                    <div class="recipe-right">
+                        <p>Calories: {{ recipe.calories }} kcal</p>
+                        <p>Ingredients needed: {{ recipe.ingredients_needed }}</p>
+                        <p>Steps: {{ recipe.steps }}</p>
+                        <!-- <p><a href="{{ recipe.link }}">Link to Recipe</a></p> -->
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% elif request.method == 'POST' %}
+            <p style="color: #ffffff; font-size: clamp(18px, 2.5vw, 25px);">No matching recipes found.</p>
+        {% endif %}
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script>
+    <script>
+        new MultiSelectTag('ingredients', {
+            rounded: true,    // default true
+            shadow: true,      // default false
+            placeholder: 'Search',  // default Search...
+            onChange: function(values) {
+                console.log(values)
+            }
+        })
+        new MultiSelectTag('allergies', {
+            rounded: true,    // default true
+            shadow: true,      // default false
+            placeholder: 'Search',  // default Search...
+            onChange: function(values) {
+                console.log(values)
+            }
+        })
+        new MultiSelectTag('health_issue', {
+            rounded: true,    // default true
+            shadow: true,      // default false
+            placeholder: 'Search',  // default Search...
+            onChange: function(values) {
+                console.log(values)
+            }
+        })
+    </script>
+</body>
+</html>

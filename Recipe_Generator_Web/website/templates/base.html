@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nattomato</title>
+    <link rel="icon" href="../static/images/icon.png">
+    <link rel="stylesheet" href="../static/style/base.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="{{ url_for('views.home') }}" class="logo">Nattomato</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('views.home') }}" class="navbar-item">Home</a><li>
+                <li><a href="#" class="navbar-item">About</a></li>                  
+                <li>
+                    <a href="#" class="navbar-item">Services▾</a>
+                    <div class="dropdown">
+                        <ul>
+                            <li><a href="{{ url_for('views.recipe') }}" class="navbar-item">Recipe</a></li>
+                            <li><a href="#" class="navbar-item">Library</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+     </div>
+</body>
+</html>
